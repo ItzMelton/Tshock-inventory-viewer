@@ -1,32 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\my_Terraria_Plugins\\InventoryViewer\\InventoryViewer\\InventoryViewer.csproj": {}
+    "/home/melton/Tshock-inventory-viewer/InventoryViewer.csproj": {}
   },
   "projects": {
-    "D:\\my_Terraria_Plugins\\InventoryViewer\\InventoryViewer\\InventoryViewer.csproj": {
+    "/home/melton/Tshock-inventory-viewer/InventoryViewer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\my_Terraria_Plugins\\InventoryViewer\\InventoryViewer\\InventoryViewer.csproj",
+        "projectUniqueName": "/home/melton/Tshock-inventory-viewer/InventoryViewer.csproj",
         "projectName": "InventoryViewer",
-        "projectPath": "D:\\my_Terraria_Plugins\\InventoryViewer\\InventoryViewer\\InventoryViewer.csproj",
-        "packagesPath": "C:\\Users\\xrayr\\.nuget\\packages\\",
-        "outputPath": "D:\\my_Terraria_Plugins\\InventoryViewer\\InventoryViewer\\obj\\",
+        "projectPath": "/home/melton/Tshock-inventory-viewer/InventoryViewer.csproj",
+        "packagesPath": "/home/melton/.nuget/packages/",
+        "outputPath": "/home/melton/Tshock-inventory-viewer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xrayr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/melton/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pryaxis.io": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -34,23 +33,21 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
-            "OTAPI.Upcoming": {
-              "target": "Package",
-              "version": "[3.1.20, )"
-            },
-            "TSAPI": {
-              "target": "Package",
-              "version": "[5.2.0, )"
-            },
             "TShock": {
               "target": "Package",
-              "version": "[5.2.0, )"
+              "version": "[6.1.0, )"
             }
           },
           "imports": [
@@ -64,12 +61,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.19, 9.0.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.120/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

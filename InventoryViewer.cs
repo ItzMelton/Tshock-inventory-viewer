@@ -12,10 +12,10 @@ namespace InventoryViewer
     [ApiVersion(2, 1)]
     public class InventoryViewer : TerrariaPlugin
     {
-        public override string Author => "Nightklp";
+        public override string Author => "Nightklp, Contributed: Melton";
         public override string Description => "just a simple plugin that view an inventory of a specific player...";
         public override string Name => "Inventory Viewer";
-        public override Version Version => new Version(1, 0, 0, 5);
+        public override Version Version => new Version(1, 0, 1, 0);
 
 
         public static Dictionary<string, string> tracktarget = new Dictionary<string, string>();
@@ -243,7 +243,6 @@ namespace InventoryViewer
 
             }
             #endregion
-            return;
         }
 
         #region Functions
@@ -272,15 +271,15 @@ namespace InventoryViewer
 
                         if (i == d2)
                         {
-                            get.Inventory += $"\n|[i{sp}:{target.TPlayer.inventory[i].netID}]|";
+                            get.Inventory += $"\n|[i{sp}:{target.TPlayer.inventory[i].type}]|";
                             d2 += 10;
                         }
                         else
                         {
-                            get.Inventory += $"[i{sp}:{target.TPlayer.inventory[i].netID}]|";
+                            get.Inventory += $"[i{sp}:{target.TPlayer.inventory[i].type}]|";
                         }
                     }
-                    get.Inventory += $"\n[ [i/s{target.TPlayer.trashItem.stack}:{target.TPlayer.trashItem.netID}] ]";
+                    get.Inventory += $"\n[ [i/s{target.TPlayer.trashItem.stack}:{target.TPlayer.trashItem.type}] ]";
                 }
                 #endregion
 
@@ -298,15 +297,15 @@ namespace InventoryViewer
                         int ii = i + 10;
                         if (i < 5)
                         {
-                            misclist += $"|[i/s{target.TPlayer.miscDyes[i].stack}:{target.TPlayer.miscDyes[i].netID}]|[i/s{target.TPlayer.miscEquips[i].stack}:{target.TPlayer.miscEquips[i].netID}]|\n";
+                            misclist += $"|[i/s{target.TPlayer.miscDyes[i].stack}:{target.TPlayer.miscDyes[i].type}]|[i/s{target.TPlayer.miscEquips[i].stack}:{target.TPlayer.miscEquips[i].type}]|\n";
                         }
                         if (i < 3)
                         {
-                            loadoutused += $"|[i/s{target.TPlayer.dye[i + 3].stack}:{target.TPlayer.dye[i + 3].netID}]|[i/s{target.TPlayer.armor[ii + 3].stack}:{target.TPlayer.armor[ii + 3].netID}]|[i/s{target.TPlayer.armor[i + 3].stack}:{target.TPlayer.armor[i + 3].netID}]|====|[i/s{target.TPlayer.dye[i].stack}:{target.TPlayer.dye[i].netID}]|[i/s{target.TPlayer.armor[ii].stack}:{target.TPlayer.armor[ii].netID}]|[i/s{target.TPlayer.armor[i].stack}:{target.TPlayer.armor[i].netID}]|\n";
+                            loadoutused += $"|[i/s{target.TPlayer.dye[i + 3].stack}:{target.TPlayer.dye[i + 3].type}]|[i/s{target.TPlayer.armor[ii + 3].stack}:{target.TPlayer.armor[ii + 3].type}]|[i/s{target.TPlayer.armor[i + 3].stack}:{target.TPlayer.armor[i + 3].type}]|====|[i/s{target.TPlayer.dye[i].stack}:{target.TPlayer.dye[i].type}]|[i/s{target.TPlayer.armor[ii].stack}:{target.TPlayer.armor[ii].type}]|[i/s{target.TPlayer.armor[i].stack}:{target.TPlayer.armor[i].type}]|\n";
                         }
                         if (i >= 6 && i <= 9)
                         {
-                            loadoutused += $"|[i/s{target.TPlayer.dye[i].stack}:{target.TPlayer.dye[i].netID}]|[i/s{target.TPlayer.armor[ii].stack}:{target.TPlayer.armor[ii].netID}]|[i/s{target.TPlayer.armor[i].stack}:{target.TPlayer.armor[i].netID}]|\n";
+                            loadoutused += $"|[i/s{target.TPlayer.dye[i].stack}:{target.TPlayer.dye[i].type}]|[i/s{target.TPlayer.armor[ii].stack}:{target.TPlayer.armor[ii].type}]|[i/s{target.TPlayer.armor[i].stack}:{target.TPlayer.armor[i].type}]|\n";
                         }
                     }
                     for (int il = 0; il < 3; il++)
@@ -317,11 +316,11 @@ namespace InventoryViewer
                             int ii = i + 10;
                             if (i < 3)
                             {
-                                loadoutget += $"|[i/s{target.TPlayer.Loadouts[il].Dye[i + 3].stack}:{target.TPlayer.Loadouts[il].Dye[i + 3].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii + 3].stack}:{target.TPlayer.Loadouts[il].Armor[ii + 3].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[i + 3].stack}:{target.TPlayer.Loadouts[il].Armor[i + 3].netID}]|====|[i/s{target.TPlayer.Loadouts[il].Dye[i].stack}:{target.TPlayer.Loadouts[il].Dye[i].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii].stack}:{target.TPlayer.Loadouts[il].Armor[ii].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[i].stack}:{target.TPlayer.Loadouts[il].Armor[i].netID}]|\n";
+                                loadoutget += $"|[i/s{target.TPlayer.Loadouts[il].Dye[i + 3].stack}:{target.TPlayer.Loadouts[il].Dye[i + 3].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii + 3].stack}:{target.TPlayer.Loadouts[il].Armor[ii + 3].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[i + 3].stack}:{target.TPlayer.Loadouts[il].Armor[i + 3].type}]|====|[i/s{target.TPlayer.Loadouts[il].Dye[i].stack}:{target.TPlayer.Loadouts[il].Dye[i].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii].stack}:{target.TPlayer.Loadouts[il].Armor[ii].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[i].stack}:{target.TPlayer.Loadouts[il].Armor[i].type}]|\n";
                             }
                             if (i >= 6 && i <= 9)
                             {
-                                loadoutget += $"|[i/s{target.TPlayer.Loadouts[il].Dye[i].stack}:{target.TPlayer.Loadouts[il].Dye[i].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii].stack}:{target.TPlayer.Loadouts[il].Armor[ii].netID}]|[i/s{target.TPlayer.Loadouts[il].Armor[i].stack}:{target.TPlayer.Loadouts[il].Armor[i].netID}]|\n";
+                                loadoutget += $"|[i/s{target.TPlayer.Loadouts[il].Dye[i].stack}:{target.TPlayer.Loadouts[il].Dye[i].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[ii].stack}:{target.TPlayer.Loadouts[il].Armor[ii].type}]|[i/s{target.TPlayer.Loadouts[il].Armor[i].stack}:{target.TPlayer.Loadouts[il].Armor[i].type}]|\n";
                             }
                         }
                         switch (il)
@@ -366,12 +365,12 @@ namespace InventoryViewer
 
                         if (i == d2)
                         {
-                            get.PiggyBank += $"\n|[i{sp}:{target.TPlayer.bank.item[i].netID}]|";
+                            get.PiggyBank += $"\n|[i{sp}:{target.TPlayer.bank.item[i].type}]|";
                             d2 += 10;
                         }
                         else
                         {
-                            get.PiggyBank += $"[i{sp}:{target.TPlayer.bank.item[i].netID}]|";
+                            get.PiggyBank += $"[i{sp}:{target.TPlayer.bank.item[i].type}]|";
                         }
                     }
                 }
@@ -390,12 +389,12 @@ namespace InventoryViewer
 
                         if (i == d2)
                         {
-                            get.Safe += $"\n|[i{sp}:{target.TPlayer.bank2.item[i].netID}]|";
+                            get.Safe += $"\n|[i{sp}:{target.TPlayer.bank2.item[i].type}]|";
                             d2 += 10;
                         }
                         else
                         {
-                            get.Safe += $"[i{sp}:{target.TPlayer.bank2.item[i].netID}]|";
+                            get.Safe += $"[i{sp}:{target.TPlayer.bank2.item[i].type}]|";
                         }
                     }
                 }
@@ -414,12 +413,12 @@ namespace InventoryViewer
 
                         if (i == d2)
                         {
-                            get.DefenderForge += $"\n|[i{sp}:{target.TPlayer.bank3.item[i].netID}]|";
+                            get.DefenderForge += $"\n|[i{sp}:{target.TPlayer.bank3.item[i].type}]|";
                             d2 += 10;
                         }
                         else
                         {
-                            get.DefenderForge += $"[i{sp}:{target.TPlayer.bank3.item[i].netID}]|";
+                            get.DefenderForge += $"[i{sp}:{target.TPlayer.bank3.item[i].type}]|";
                         }
                     }
                 }
@@ -438,12 +437,12 @@ namespace InventoryViewer
 
                         if (i == d2)
                         {
-                            get.VoidVault += $"\n|[i{sp}:{target.TPlayer.bank4.item[i].netID}]|";
+                            get.VoidVault += $"\n|[i{sp}:{target.TPlayer.bank4.item[i].type}]|";
                             d2 += 10;
                         }
                         else
                         {
-                            get.VoidVault += $"[i{sp}:{target.TPlayer.bank4.item[i].netID}]|";
+                            get.VoidVault += $"[i{sp}:{target.TPlayer.bank4.item[i].type}]|";
                         }
                     }
                 }
@@ -698,15 +697,15 @@ namespace InventoryViewer
 
                 if (prev.prefix != 0) prevps = $"/p{prev.prefix}";
 
-                if (now.netID != prev.netID || now.stack != prev.stack || now.prefix != prev.prefix)
+                if (now.type != prev.type || now.stack != prev.stack || now.prefix != prev.prefix)
                 {
                     if (i == 58)
                     {
-                        tracker.SendMessage($"{StatusTitle} {target.Name} [c/ffffff:holds the item:] [i{nowps}:{now.netID}]", Color.Yellow);
+                        tracker.SendMessage($"{StatusTitle} {target.Name} [c/ffffff:holds the item:] [i{nowps}:{now.type}]", Color.Yellow);
                         target.SetData("previnv1", target.TPlayer.inventory.Clone());
                     } else
                     {
-                        tracker.SendMessage($"{StatusTitle} {target.Name} [c/ffffff:inventory Slot No.{i}] changed [i{prevps}:{prev.netID}] => [i{nowps}:{now.netID}]", Color.Yellow);
+                        tracker.SendMessage($"{StatusTitle} {target.Name} [c/ffffff:inventory Slot No.{i}] changed [i{prevps}:{prev.type}] => [i{nowps}:{now.type}]", Color.Yellow);
                         target.SetData("previnv1", target.TPlayer.inventory.Clone());
                     }
                 }
@@ -729,9 +728,9 @@ namespace InventoryViewer
 
                 if (prev.prefix != 0) prevps = $"/p{prev.prefix}";
 
-                if (now.netID != prev.netID || now.stack != prev.stack || now.prefix != prev.prefix)
+                if (now.type != prev.type || now.stack != prev.stack || now.prefix != prev.prefix)
                 {
-                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/fd67e9:pig Slot No.{i}] changed [i{prevps}:{prev.netID}] => [i{nowps}:{now.netID}]", Color.Yellow);
+                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/fd67e9:pig Slot No.{i}] changed [i{prevps}:{prev.type}] => [i{nowps}:{now.type}]", Color.Yellow);
                     target.SetData("prevbank1", target.TPlayer.bank.item.Clone());
                 }
             }
@@ -750,9 +749,9 @@ namespace InventoryViewer
 
                 if (prev.prefix != 0) prevps = $"/p{prev.prefix}";
 
-                if (now.netID != prev.netID || now.stack != prev.stack || now.prefix != prev.prefix)
+                if (now.type != prev.type || now.stack != prev.stack || now.prefix != prev.prefix)
                 {
-                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/5e5e5e:safe Slot No.{i}] changed [i{prevps}:{prev.netID}] => [i{nowps}:{now.netID}]", Color.Yellow);
+                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/5e5e5e:safe Slot No.{i}] changed [i{prevps}:{prev.type}] => [i{nowps}:{now.type}]", Color.Yellow);
                     target.SetData("prevbank2", target.TPlayer.bank2.item.Clone());
                 }
             }
@@ -771,9 +770,9 @@ namespace InventoryViewer
 
                 if (prev.prefix != 0) prevps = $"/p{prev.prefix}";
 
-                if (now.netID != prev.netID || now.stack != prev.stack || now.prefix != prev.prefix)
+                if (now.type != prev.type || now.stack != prev.stack || now.prefix != prev.prefix)
                 {
-                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/fffb54:defenderforge Slot No.{i}] changed [i{prevps}:{prev.netID}] => [i{nowps}:{now.netID}]", Color.Yellow);
+                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/fffb54:defenderforge Slot No.{i}] changed [i{prevps}:{prev.type}] => [i{nowps}:{now.type}]", Color.Yellow);
                     target.SetData("prevbank3", target.TPlayer.bank3.item.Clone());
                 }
             }
@@ -792,9 +791,9 @@ namespace InventoryViewer
 
                 if (prev.prefix != 0) prevps = $"/p{prev.prefix}";
 
-                if (now.netID != prev.netID || now.stack != prev.stack || now.prefix != prev.prefix)
+                if (now.type != prev.type || now.stack != prev.stack || now.prefix != prev.prefix)
                 {
-                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/8d00cb:voidvault Slot No.{i}] changed [i{prevps}:{prev.netID}] => [i{nowps}:{now.netID}]", Color.Yellow);
+                    tracker.SendMessage($"{StatusTitle} {target.Name} [c/8d00cb:voidvault Slot No.{i}] changed [i{prevps}:{prev.type}] => [i{nowps}:{now.type}]", Color.Yellow);
                     target.SetData("prevbank4", target.TPlayer.bank4.item.Clone());
                 }
             }

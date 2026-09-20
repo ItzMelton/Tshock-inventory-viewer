@@ -1,5 +1,5 @@
 # Tshock-inventory-viewer
-simple inventory viewer command by doing (   /inventoryview <player> <type>  ) to view player inventory
+A simple inventory viewer command by doing (   /inventoryview <player> <type>  ) to view the target's player inventory
 
 permisions:
 + inventoryviewer.view
